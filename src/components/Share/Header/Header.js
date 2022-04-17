@@ -11,9 +11,9 @@ const Header = () => {
                 <CustomLink to='/'>Home</CustomLink>
                 <CustomLink to='/blogs'>Blogs</CustomLink>
             </div>
-            <div className='d-flex'>
+            <div className='d-flex ms-5'>
                 <Link to='/'>
-                    <img className='w-50 ms-5' src={logo} alt="" />
+                    <img className='w-25 my-1 ms-5' src={logo} alt="" />
                 </Link>
             </div>
             <div className='d-flex'>
