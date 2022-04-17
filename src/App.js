@@ -9,7 +9,9 @@ import LogIn from './components/Home/LogIn/LogIn';
 import SignUp from './components/Home/SignUp/SignUp';
 import PageNotFound from './components/PageNotFound/PageNotFound';
 import Footer from './components/Share/Footer/Footer';
-import ServiceDetailPage from './components/Share/ServiceDetailPage/ServiceDetailPage';
+// import ServiceDetailPage from './components/Share/ServiceDetailPage/ServiceDetailPage';
+import RequireAuth from './components/Home/LogIn/RequireAuth/RequireAuth';
+import CheckOut from './components/Home/CheckOut/CheckOut';
 
 function App() {
   return (
@@ -23,7 +25,11 @@ function App() {
         <Route path='/about' element={<About></About>}></Route>
         <Route path='/login' element={<LogIn></LogIn>}></Route>
         <Route path='/signup' element={<SignUp></SignUp>}></Route>
-        <Route path='service/:serviceId' element={<ServiceDetailPage></ServiceDetailPage>}></Route>
+        <Route path='service/:serviceId' element={
+          <RequireAuth>
+            <CheckOut></CheckOut>
+          </RequireAuth>
+        }></Route>
         <Route path='*' element={<PageNotFound></PageNotFound>}></Route>
       </Routes>
 

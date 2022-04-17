@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import logo from '../../../images/smithLogo.png'
 import './SignUp.css'
@@ -7,6 +7,7 @@ import auth from '../../../firebase.init';
 
 
 const SignUp = () => {
+    const navigate = useNavigate();
 
     const [
         createUserWithEmailAndPassword,
@@ -26,6 +27,10 @@ const SignUp = () => {
         const confirmPassword = confirmPasswordRef.current.value;
         createUserWithEmailAndPassword(email, password);
         // console.log(email, password, confirmPassword)
+    }
+
+    if (user) {
+        navigate('/');
     }
 
     return (
