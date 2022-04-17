@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import logo from '../../../images/smithLogo.png'
 
@@ -12,6 +12,9 @@ const LogIn = () => {
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
+    const location = useLocation();
+    let from = location.state?.from?.pathname || '/';
+
     const navigate = useNavigate();
 
     const emailRef = useRef('');
@@ -25,13 +28,15 @@ const LogIn = () => {
         signInWithEmailAndPassword(email, password)
     }
     if (user) {
-        navigate('/')
+        navigate(from, { replace: true });
     }
 
     return (
         <div>
-            <div className='text-center my-5'>
-                <img className='w-25' src={logo} alt="" />
+            <div className='d-flex justify-content-center my-4'>
+                <div className=''>
+                    <img className='w-100' src={logo} alt="" />
+                </div>
             </div>
             <form onSubmit={handleFormSubmit}>
                 <div className='d-flex justify-content-center'>

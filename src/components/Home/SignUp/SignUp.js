@@ -35,8 +35,10 @@ const SignUp = () => {
 
     return (
         <div>
-            <div className='text-center my-4'>
-                <img className='w-25' src={logo} alt="" />
+            <div className='d-flex justify-content-center my-4'>
+                <div>
+                    <img className='w-100' src={logo} alt="" />
+                </div>
             </div>
             <form onSubmit={handleFormSubmit}>
                 <div className='d-flex justify-content-center'>
