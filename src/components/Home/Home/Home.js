@@ -53,7 +53,9 @@ const Home = () => {
             <div>
                 <h2 className='text-center my-4 text-primary'>Services</h2>
             </div>
-            <Services></Services>
+            <div className="d-flex justify-content-center">
+                <Services></Services>
+            </div>
         </div>
     );
 };
