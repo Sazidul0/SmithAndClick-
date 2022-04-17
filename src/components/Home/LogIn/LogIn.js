@@ -1,8 +1,10 @@
+import { async } from '@firebase/util';
 import React, { useRef } from 'react';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import logo from '../../../images/smithLogo.png'
+import SocialLogin from '../../Share/SocialLogin/SocialLogin';
 
 const LogIn = () => {
 
@@ -13,12 +15,28 @@ const LogIn = () => {
         error,
     ] = useSignInWithEmailAndPassword(auth);
     const location = useLocation();
+
+    let errorElement;
+    if (error) {
+
+        errorElement = <p className='text-danger'>Error: {error?.message}</p>
+
+
+    }
+    const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
+
     let from = location.state?.from?.pathname || '/';
 
     const navigate = useNavigate();
 
     const emailRef = useRef('');
     const passwordRef = useRef('');
+
+    const resetPassword = async () => {
+        const email = emailRef.current.value;
+        await sendPasswordResetEmail(email);
+        alert('Sent email');
+    }
 
     const handleFormSubmit = event => {
         event.preventDefault();
@@ -49,7 +67,11 @@ const LogIn = () => {
                     </div>
                 </div>
             </form>
-            <p className='text-center mt-2 text-danger'><Link className='text-decoration-none  mt-2 text-danger' to='/signup'> Don't have an Account?</Link></p>
+            {errorElement}
+            <p className='text-center mt-2 '>Don't have an Account?<Link className='text-decoration-none  mt-2 text-primary' to='/signup'> Please Sign In</Link></p>
+            <p className='text-center mt-2 '>Forget Password?<Link onClick={resetPassword} className='text-decoration-none  mt-2 text-primary' to='/signup'> Reset Password</Link></p>
+
+            <SocialLogin></SocialLogin>
         </div>
     );
 };

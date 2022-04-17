@@ -10,7 +10,7 @@ const Home = () => {
     return (
         <div>
 
-            <div className='mb-4'>
+            <div className='mb-5'>
                 <Carousel fade>
                     <Carousel.Item>
                         <img
@@ -51,7 +51,7 @@ const Home = () => {
                 </Carousel>
             </div>
             <div>
-                <h2 className='text-center my-4 text-primary'>Services</h2>
+                <h1 className='text-center mt-5 text-primary'>Services</h1>
             </div>
             <div className="d-flex justify-content-center">
                 <Services></Services>
