@@ -3,13 +3,14 @@ import { Carousel } from 'react-bootstrap';
 import carousel1 from '../../../images/carosol/carousel01.png'
 import carousel2 from '../../../images/carosol/carousel02.png'
 import carousel3 from '../../../images/carosol/carousel03.png'
+import Services from '../Services/Services';
 
 
 const Home = () => {
     return (
         <div>
 
-            <div>
+            <div className='mb-4'>
                 <Carousel fade>
                     <Carousel.Item>
                         <img
@@ -18,8 +19,8 @@ const Home = () => {
                             alt="First slide"
                         />
                         <Carousel.Caption>
-                            <h3>First slide label</h3>
-                            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                            <h3 className='carousel-title'>Smith & Click</h3>
+                            <p>EMOTIONAL MOMENTS. EXCEPTIONALLY DOCUMENTED.</p>
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>
@@ -30,8 +31,9 @@ const Home = () => {
                         />
 
                         <Carousel.Caption>
-                            <h3>Second slide label</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            <h3 className='carousel-title'>Smith & Click</h3>
+                            <p>EXCEPTIONAL WEDDING PHOTOGRAPHY,
+                                PHOTOS THAT ILLUSTRATE THE BEST DAY OF YOUR LIFE.</p>
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>
@@ -42,12 +44,16 @@ const Home = () => {
                         />
 
                         <Carousel.Caption>
-                            <h3>Third slide label</h3>
-                            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                            <h3 className='carousel-title'>Smith & Click</h3>
+                            <p>AN EXCEPTIONAL EXPERIENCE FOR ICONIC IMAGES.</p>
                         </Carousel.Caption>
                     </Carousel.Item>
                 </Carousel>
             </div>
+            <div>
+                <h2 className='text-center my-4 text-primary'>Services</h2>
+            </div>
+            <Services></Services>
         </div>
     );
 };

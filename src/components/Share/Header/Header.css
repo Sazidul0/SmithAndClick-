@@ -5,7 +5,11 @@
 }
 
 .header-container a:hover {
-    font-size: large;
-    font-weight: 700;
 
+    background-color: aqua !important;
+}
+
+.carousel-title {
+    font-family: 'Great Vibes', cursive;
+    font-weight: 500;
 }

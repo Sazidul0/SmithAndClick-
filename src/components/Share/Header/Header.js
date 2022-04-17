@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
-        <div className='d-flex align-items-center justify-content-center header-container'>
+        <div className='bg-primary d-flex align-items-center justify-content-center header-container'>
             <div className='d-flex '>
                 <CustomLink to='/'>Home</CustomLink>
                 <CustomLink to='/blogs'>Blogs</CustomLink>
