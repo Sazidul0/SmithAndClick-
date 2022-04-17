@@ -4,6 +4,8 @@ import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import logo from '../../../images/smithLogo.png'
 import './SignUp.css'
 import auth from '../../../firebase.init';
+import SocialLogin from '../../Share/SocialLogin/SocialLogin';
+import Loading from '../../Share/Loading/Loading';
 
 
 const SignUp = () => {
@@ -14,7 +16,7 @@ const SignUp = () => {
         user,
         loading,
         error,
-    ] = useCreateUserWithEmailAndPassword(auth);
+    ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
 
     const emailRef = useRef('');
     const passwordRef = useRef('');
@@ -31,6 +33,10 @@ const SignUp = () => {
 
     if (user) {
         navigate('/');
+    }
+
+    if (loading) {
+        return <Loading></Loading>
     }
 
     return (
@@ -52,8 +58,8 @@ const SignUp = () => {
                 </div>
             </form>
             <p className='text-center text-danger'>{error?.message}</p>
-            <p className='text-center'><Link to='/login' className='text-decoration-none  mt-2 text-danger'> Already have an Account</Link></p>
-
+            <p className='text-center'>Already have an Account? <Link to='/login' className='text-decoration-none  mt-2 text-primary'>  Please Log In </Link></p>
+            <SocialLogin></SocialLogin>
         </div>
     );
 };

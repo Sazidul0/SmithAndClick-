@@ -4,7 +4,10 @@ import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import logo from '../../../images/smithLogo.png'
+import Loading from '../../Share/Loading/Loading';
 import SocialLogin from '../../Share/SocialLogin/SocialLogin';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const LogIn = () => {
 
@@ -34,8 +37,13 @@ const LogIn = () => {
 
     const resetPassword = async () => {
         const email = emailRef.current.value;
-        await sendPasswordResetEmail(email);
-        alert('Sent email');
+        if (email) {
+            await sendPasswordResetEmail(email);
+            toast('Sent email');
+        }
+        else {
+            toast("Please enter your email address")
+        }
     }
 
     const handleFormSubmit = event => {
@@ -47,6 +55,10 @@ const LogIn = () => {
     }
     if (user) {
         navigate(from, { replace: true });
+    }
+
+    if (loading || sending) {
+        return <Loading></Loading>
     }
 
     return (
@@ -69,9 +81,10 @@ const LogIn = () => {
             </form>
             {errorElement}
             <p className='text-center mt-2 '>Don't have an Account?<Link className='text-decoration-none  mt-2 text-primary' to='/signup'> Please Sign In</Link></p>
-            <p className='text-center mt-2 '>Forget Password?<Link onClick={resetPassword} className='text-decoration-none  mt-2 text-primary' to='/signup'> Reset Password</Link></p>
+            <p className='text-center mt-2 '>Forget Password?<button onClick={resetPassword} className='btn btn-link text-decoration-none  mt-2 text-primary' to='/signup'> Reset Password</button></p>
 
             <SocialLogin></SocialLogin>
+            <ToastContainer></ToastContainer>
         </div>
     );
 };
