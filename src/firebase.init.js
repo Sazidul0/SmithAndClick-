@@ -6,12 +6,12 @@ import { getAuth } from 'firebase/auth'
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyDLWZnQjluJEUxWbom2RZg-aWFNJCZ776I",
-    authDomain: "smith-and-click.firebaseapp.com",
-    projectId: "smith-and-click",
-    storageBucket: "smith-and-click.appspot.com",
-    messagingSenderId: "510394254600",
-    appId: "1:510394254600:web:2f4c1ecc9d4f65517cd8bd"
+    apiKey: process.env.REACT_APP_apiKey,
+    authDomain: process.env.REACT_APP_authDomain,
+    projectId: process.env.REACT_APP_projectId,
+    storageBucket: process.env.REACT_APP_storageBucket,
+    messagingSenderId: process.env.REACT_APP_messagingSenderId,
+    appId: process.env.REACT_APP_appId,
 };
 
 // Initialize Firebase

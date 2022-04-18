@@ -23,7 +23,17 @@ const Blogs = () => {
 
             <h2>2. Why are we using firebase? What other options do we have to implement authentication?</h2>
             <p className='ms-3'>Firebase is a realtime database, which lets us build rich, collaborative applications by allowing secure access to the database directly from client-side code.Firebase provides a seamless way to integrate with Google analytics using which the user behavioral data can be acquired, and insightful information can be generated through it. <br />
-                In authentication, the user or computer has to prove its identity to the server or client. Usually, authentication by a server entails the use of a user name and password. Other ways to authenticate can be through cards, retina scans, voice recognition, and fingerprints.
+                Firebase Alternatives:
+                <ul>
+                    <li>Parse</li>
+                    <li>Back4App</li>
+                    <li>AWS Amplify</li>
+                    <li>Kuzzle</li>
+                    <li>Couchbase</li>
+                    <li>NativeScript</li>
+                    <li>RxDB</li>
+                    <li>Flutter</li>
+                </ul>
             </p>
 
             <h2>3. What other services does firebase provide other than authentication?</h2>
