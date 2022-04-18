@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button, Card } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import './Service.css'
 
 const Service = ({ service }) => {
     const { name, price, img, description } = service;
@@ -12,8 +13,8 @@ const Service = ({ service }) => {
     // console.log(props.service)
     return (
 
-        < div className=''>
-            <Card style={{ width: '24rem' }} className='pb-2'>
+        < div className='container-fluid responsive-service-container'>
+            <Card className='pb-2'>
                 <Card.Img className=' img-fluid' variant="top" src={img} />
                 <Card.Body>
                     <Card.Title>{name}</Card.Title>
