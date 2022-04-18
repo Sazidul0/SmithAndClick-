@@ -1,6 +1,6 @@
 # Smith & Click
 
-A Wedding Photographer Site [Create React App](https://github.com/facebook/create-react-app).
+A Wedding Photographer Site [Smith and Click](https://smith-and-click.web.app/).
 
 
 ## About This Project
