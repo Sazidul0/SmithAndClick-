@@ -1,3 +1,7 @@
+.responsive-signup-container {
+    margin-top: 60px;
+}
+
 .signup-container input {
     display: block;
     width: 400px;
@@ -10,11 +14,26 @@
 }
 
 .signup-container button {
-    background-color: red;
+    background-color: rgb(172, 87, 252);
     height: 50px;
     width: 400px;
     border-radius: 10px;
     border: none;
     color: white;
     font-weight: 600;
+}
+
+.signup-container button:hover {
+    background-color: blue;
+}
+
+
+/* Responsive */
+
+@media only screen and (max-width: 992px) {
+    .responsive-signup-container {
+
+        margin-top: 70px !important;
+
+    }
 }

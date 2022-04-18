@@ -6,10 +6,12 @@ import './SignUp.css'
 import auth from '../../../firebase.init';
 import SocialLogin from '../../Share/SocialLogin/SocialLogin';
 import Loading from '../../Share/Loading/Loading';
+import { toast, ToastContainer } from 'react-toastify';
 
 
 const SignUp = () => {
     const navigate = useNavigate();
+
 
     const [
         createUserWithEmailAndPassword,
@@ -22,14 +24,23 @@ const SignUp = () => {
     const passwordRef = useRef('');
     const confirmPasswordRef = useRef('');
 
+
+
     const handleFormSubmit = event => {
         event.preventDefault();
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
         const confirmPassword = confirmPasswordRef.current.value;
-        createUserWithEmailAndPassword(email, password);
+        if (password === confirmPassword) {
+            createUserWithEmailAndPassword(email, password);
+        }
+        else {
+            toast("Password and Confirm Password didn't matched.")
+        }
+
         // console.log(email, password, confirmPassword)
     }
+
 
     if (user) {
         navigate('/');
@@ -40,7 +51,7 @@ const SignUp = () => {
     }
 
     return (
-        <div>
+        <div className='responsive-signup-container'>
             <div className='d-flex justify-content-center my-4'>
                 <div>
                     <img className='w-100' src={logo} alt="" />
@@ -57,9 +68,10 @@ const SignUp = () => {
                     </div>
                 </div>
             </form>
+
             <p className='text-center text-danger'>{error?.message}</p>
             <p className='text-center'>Already have an Account? <Link to='/login' className='text-decoration-none  mt-2 text-primary'>  Please Log In </Link></p>
-            <SocialLogin></SocialLogin>
+            <SocialLogin></SocialLogin><ToastContainer></ToastContainer>
         </div>
     );
 };

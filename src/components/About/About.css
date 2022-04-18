@@ -1,0 +1,26 @@
+.background-image {
+    margin-top: 50px;
+    background-image: url("../../images/About/top-banner.png");
+    background-repeat: no-repeat;
+}
+
+/* Responsive */
+
+@media only screen and (max-width: 992px) {
+    .responsive-about-container {
+
+        margin-top: 70px !important;
+
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .about-text-container {
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 60px;
+
+    }
+}

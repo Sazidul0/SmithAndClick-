@@ -21,7 +21,7 @@ const Service = ({ service }) => {
                         {description}
                     </Card.Text>
                     <Card.Text>
-                        Price: ${price}
+                        <b> Price:</b> ${price}
                     </Card.Text>
                     <Button onClick={() => navigateToServiceDetail(name)} variant="primary">{name}</Button>
                 </Card.Body>

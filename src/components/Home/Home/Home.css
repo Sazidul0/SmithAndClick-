@@ -1,0 +1,19 @@
+.services-title {
+    font-family: 'Dancing Script', cursive;
+}
+
+
+/* Responsive */
+@media only screen and (max-width: 576px) {
+    .responsive-home-container {
+
+        margin-top: 70px !important;
+
+    }
+}
+
+@media only screen and (min-width: 577px) and (max-width: 992px) {
+    .responsive-home-container {
+        margin-top: 70px !important;
+    }
+}

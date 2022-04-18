@@ -62,7 +62,7 @@ const LogIn = () => {
     }
 
     return (
-        <div>
+        <div className='responsive-signup-container'>
             <div className='d-flex justify-content-center my-4'>
                 <div className=''>
                     <img className='w-100' src={logo} alt="" />

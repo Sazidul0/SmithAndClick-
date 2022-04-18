@@ -3,12 +3,14 @@ import { Carousel } from 'react-bootstrap';
 import carousel1 from '../../../images/carosol/carousel01.png'
 import carousel2 from '../../../images/carosol/carousel02.png'
 import carousel3 from '../../../images/carosol/carousel03.png'
+import Mystory from '../Mystory/Mystory';
 import Services from '../Services/Services';
+import './Home.css'
 
 
 const Home = () => {
     return (
-        <div>
+        <div className='responsive-home-container'>
 
             <div className='mb-5'>
                 <Carousel fade>
@@ -51,11 +53,15 @@ const Home = () => {
                 </Carousel>
             </div>
             <div>
-                <h1 className='text-center mt-5 text-primary'>Services</h1>
+                <h1 className='text-center mt-5 text-primary services-title'>My Services</h1>
             </div>
             <div className="d-flex justify-content-center">
                 <Services></Services>
+
             </div>
+            <br />
+
+            <Mystory></Mystory>
         </div>
     );
 };
