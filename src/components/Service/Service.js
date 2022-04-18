@@ -14,7 +14,7 @@ const Service = ({ service }) => {
 
         < div className=''>
             <Card style={{ width: '24rem' }} className='pb-2'>
-                <Card.Img className='w-100' variant="top" src={img} />
+                <Card.Img className=' img-fluid' variant="top" src={img} />
                 <Card.Body>
                     <Card.Title>{name}</Card.Title>
                     <Card.Text>

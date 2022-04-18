@@ -51,14 +51,14 @@ const SignUp = () => {
     }
 
     return (
-        <div className='responsive-signup-container'>
+        <div className='responsive-signup-container container-fluid '>
             <div className='d-flex justify-content-center my-4'>
                 <div>
-                    <img className='w-100' src={logo} alt="" />
+                    <img className='w-100 img-fluid' src={logo} alt="" />
                 </div>
             </div>
             <form onSubmit={handleFormSubmit}>
-                <div className='d-flex justify-content-center'>
+                <div className='d-flex justify-content-center container-fluid'>
                     <div className="signup-container">
                         <input type="text" placeholder='Name' />
                         <input ref={emailRef} type="email" name="email" id="email" placeholder='Email' required />

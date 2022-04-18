@@ -36,4 +36,12 @@
         margin-top: 70px !important;
 
     }
+
+    .signup-container input {
+        width: 320px;
+    }
+
+    .signup-container button {
+        width: 320px;
+    }
 }

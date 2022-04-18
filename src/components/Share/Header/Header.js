@@ -2,7 +2,7 @@ import React from 'react';
 import CustomLink from '../CustomLink/CustomLink';
 import logo from '../../../images/smithLogo.png';
 import './Header.css'
-import { Link } from 'react-router-dom';
+
 import { Container, Nav, Navbar, } from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
@@ -20,7 +20,7 @@ const Header = () => {
         <div>
             <Navbar fixed="top" style={{ height: '50px' }} className='bg-primary responsive-header-container' collapseOnSelect expand="lg" variant="dark">
                 <Container className=''>
-                    <Navbar.Brand as={Link} to='/'>
+                    <Navbar.Brand>
                         <img className='w-25' src={logo} alt="" />
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
