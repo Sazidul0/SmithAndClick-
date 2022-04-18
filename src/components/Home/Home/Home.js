@@ -12,7 +12,7 @@ const Home = () => {
     return (
         <div className='responsive-home-container'>
 
-            <div className='mb-5'>
+            <div className='mb-5 mt-3'>
                 <Carousel fade>
                     <Carousel.Item>
                         <img

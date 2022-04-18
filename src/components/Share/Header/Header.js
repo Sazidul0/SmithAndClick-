@@ -18,7 +18,7 @@ const Header = () => {
     return (
 
         <div>
-            <Navbar fixed="top" style={{ height: '50px' }} className='bg-primary responsive-header-container' collapseOnSelect expand="lg" variant="dark">
+            <Navbar fixed="top" style={{ height: '60px' }} className='bg-primary responsive-header-container' collapseOnSelect expand="lg" variant="dark">
                 <Container className=''>
                     <Navbar.Brand>
                         <img className='w-25' src={logo} alt="" />

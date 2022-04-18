@@ -13,7 +13,7 @@ const Service = ({ service }) => {
     // console.log(props.service)
     return (
 
-        < div className='container-fluid responsive-service-container'>
+        < div className=' container-fluid responsive-service-container'>
             <Card className='pb-2'>
                 <Card.Img className=' img-fluid' variant="top" src={img} />
                 <Card.Body>
