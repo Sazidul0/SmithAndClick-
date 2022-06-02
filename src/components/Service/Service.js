@@ -14,9 +14,9 @@ const Service = ({ service }) => {
     return (
 
         < div className=' container-fluid responsive-service-container'>
-            <Card className='pb-2'>
-                <Card.Img className=' img-fluid' variant="top" src={img} />
-                <Card.Body>
+            <Card className='pb-2 shadow service-container'>
+                <Card.Img className=' img-fluid service-img-container' variant="top" src={img} />
+                <Card.Body className='ms-3'>
                     <Card.Title>{name}</Card.Title>
                     <Card.Text>
                         {description}

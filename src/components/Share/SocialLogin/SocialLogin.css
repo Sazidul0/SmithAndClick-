@@ -1,0 +1,9 @@
+.social-btn {
+    border-radius: 15px;
+    font-weight: 600;
+}
+
+.social-btn:hover {
+    background-color: rgb(133, 3, 255);
+    color: white;
+}
